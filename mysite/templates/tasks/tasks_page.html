@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks list</title>
+</head>
+<body>
+    <h4><a href="/">Go Home</a></h4>
+    <h2>Tasks list:</h2>
+    <ul>
+        {%for task in tasks %}
+            <li>
+                {{task.title}},
+                Completed:
+                <input type="checkbox" checked="checked">{{task.completed}}
+            </li>
+        {%empty%}
+            <li>No tasks</li>
+        {%endfor%}
+    </ul>
+    <h2><a href="/task/add">Add a task</a></h2>
+    
+</body>
+</html>
