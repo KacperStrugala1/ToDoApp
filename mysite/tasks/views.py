@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Task
@@ -20,3 +21,13 @@ def create_task(request):
     else:
         form = TaskForm()
     return render(request, 'tasks/create_task.html', {'form': form})
+=======
+from django.shortcuts import render
+from .models import Task
+
+# Create your views here.
+def task_view(request):
+    #creating var that filter user model task 
+    tasks = Task.objects.filter(user=request.user)
+    return render(request,"tasks/tasks_page.html",{'model': tasks})
+>>>>>>> kstrugala

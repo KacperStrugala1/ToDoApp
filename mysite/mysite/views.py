@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from tasks.models import Task
+<<<<<<< HEAD
 from django.views import View
 import logging
 
@@ -20,3 +21,14 @@ class AboutView(View):
         logging.info("info function is working")
         return JsonResponse(response_date)
         
+=======
+
+def home_view(request):
+    
+    #{'tasks'is ta variable used in html}
+    return render(request,"mysite/home.html")
+
+def about_view(request):
+    
+    return HttpResponse("about site")
+>>>>>>> kstrugala
