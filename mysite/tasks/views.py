@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Task
 from .forms import TaskForm
 
-# Create your views here.
+
 def task_view(request):
     #creating var that filter user model task 
     tasks = Task.objects.filter(user=request.user)

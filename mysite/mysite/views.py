@@ -1,12 +1,22 @@
-from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render
 from tasks.models import Task
+from django.views import View
+import logging
 
-def home_view(request):
-    
-    #{'tasks'is ta variable used in html}
-    return render(request,"mysite/home.html")
 
-def about_view(request):
+
+
+class HomeView(View):
+    def get(self, request):
+
+        return render(request,"mysite/home.html")
+
+class AboutView(View):
     
-    return HttpResponse("about site")
+    def get(self, request):
+        
+        response_date = {"error": "about site"}
+        logging.info("info function is working")
+        return JsonResponse(response_date)
+        
