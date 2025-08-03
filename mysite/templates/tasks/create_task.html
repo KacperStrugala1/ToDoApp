@@ -1,6 +1,18 @@
-<h2>Nowe zadanie</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Dodaj zadanie</button>
-</form>
+ {% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <ul class="navbar">
+        <li class="navbar_item"><a class="active" href="/">Home</a></li>
+        <li class="navbar_item"><a href="">Task List</a></li>
+        <li class="navbar_item"><a href="/working">New Feature</a></li>
+        <li class="navbar_item"><a href="/about">About</a></li>
+    </ul>
+    <h2>New Task</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Task</button>
+    </form>    
+</body>
