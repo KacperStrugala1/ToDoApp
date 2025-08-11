@@ -6,6 +6,7 @@ class Task(models.Model):
     #new 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
+    description = models.TextField()
     completed = models.BooleanField(default=False)
     create_date = models.DateTimeField(auto_now_add=True)
 

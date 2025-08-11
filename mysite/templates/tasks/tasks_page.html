@@ -19,11 +19,17 @@
     <h2>Tasks list:</h2>
     <ul>
         {%for task in tasks %}
-            <li>
-                {{task.title}},
-                Completed:
-                <input type="checkbox" checked="checked">{{task.completed}}
-            </li>
+            <div>
+                <li>
+                    <strong>Title: </strong> {{task.title}}
+                    <br>
+                    <strong>Description: </strong>{{task.description}}
+                    <br>
+                    Completed:
+                    <input type="checkbox" checked="checked">{{task.completed}}
+                    <br><br>
+                </li>
+            </div>
         {%empty%}
             <li>No tasks</li>
         {%endfor%}

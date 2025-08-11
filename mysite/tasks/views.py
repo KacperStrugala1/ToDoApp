@@ -14,9 +14,9 @@ def create_task(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             task = form.save(commit=False)
-            task.user = request.user  # przypisujemy zalogowanego użytkownika
+            task.user = request.user  
             task.save()
-            return redirect('/task/')  # przekierowanie np. do listy zadań
+            return redirect('/task/') 
     else:
         form = TaskForm()
     return render(request, 'tasks/create_task.html', {'form': form})

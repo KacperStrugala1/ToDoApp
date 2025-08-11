@@ -12,7 +12,6 @@ class WorkingView(View):
     def get(self, request):
         return render(request,"mysite/work.html")
 
-
 class AboutView(View):
     def get(self, request):
         response_date = {"error": "about site"}
